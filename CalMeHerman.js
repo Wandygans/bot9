@@ -26,7 +26,7 @@ const brainly = require('brainly-scraper')
 const fetch = require('node-fetch');
 const request = require('request');
 const yts = require( 'yt-search')
-const ms = require('parse-ms')
+
 const toMs = require('ms')
 const axios = require("axios")
 const fs = require("fs-extra")
@@ -996,7 +996,7 @@ if (isGame(sender, isPremium, gcount, glimit)) return reply(`Limit game kamu sud
 reply(mess.wait)
 try {
             if(!q) return reply('gambar apa?')
-            let pin = await hx.pinterest(q)
+            let pin = await (q)
             let ac = pin[Math.floor(Math.random() * pin.length)]
             let di = await getBuffer(ac)
             await dha.sendMessage(from,di,image,{quoted: mek ,caption: `*Result* : ${ac}`})
